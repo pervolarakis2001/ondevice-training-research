@@ -106,4 +106,4 @@ If you use this code in your research, please cite:
 
 ## Contact
 
-For questions or collaborations, please open an issue or contact [pervoalarakis3@gmail.com].
+For questions or collaborations, please open an issue or contact [pervolarakis3@gmail.com].

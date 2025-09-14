@@ -1,6 +1,6 @@
 # On-Device Training Research Project
 
-This repository contains research code for on-device training experiments using MobileNetV2 and CIFAR-10 dataset and ImageNer. The project explores adaptive sample selection and efficient training strategies for mobile and edge devices. This project was part iof my diploma thesis 
+This repository contains research code for on-device training experiments using MobileNetV2 and CIFAR-10 dataset and ImageNer. The project explores adaptive sample selection and efficient training strategies for mobile and edge devices. This project was part of my diploma thesis 
 
 ## Project Overview
 
@@ -11,51 +11,13 @@ This research investigates on-device training methodologies with focus on:
 - **External Dataset Integration**: Incorporating external datasets (Tiny ImageNet) for improved training
 - **Performance Analysis**: Comprehensive evaluation of training strategies and convergence patterns
 
-## Repository Structure
-
-```
-on_device_training/
-├── src/                          # Source code modules
-│   ├── models/                   # Model definitions and architectures
-│   │   ├── mobilenet_model.py   # MobileNetV2-based on-device training model
-│   │   └── __init__.py
-│   ├── data/                     # Data preprocessing and handling
-│   │   ├── data_preprocessing.py # CIFAR-10 preprocessing and dataset creation
-│   │   └── __init__.py
-│   ├── training/                 # Training utilities and trainers
-│   │   ├── trainer.py           # Main training and evaluation logic
-│   │   └── __init__.py
-│   ├── evaluation/               # Metrics and evaluation tools
-│   │   ├── metrics.py           # Performance metrics and visualization
-│   │   └── __init__.py
-│   ├── utils/                    # Utility functions
-│   │   ├── sample_selection.py  # Confidence-based sample selection
-│   │   ├── training_helpers.py  # Training experiment helpers
-│   │   ├── external_data.py     # External dataset integration
-│   │   ├── plotting.py          # Visualization utilities
-│   │   └── __init__.py
-│   └── __init__.py
-├── notebooks/                    # Jupyter notebooks for experiments
-│   ├── best_worst_sample_selection.ipynb      # Sample selection analysis
-│   ├── tflite_model_conversion.ipynb          # Model conversion to TFLite
-│   ├── external_dataset_integration.ipynb     # Tiny ImageNet integration
-│   ├── results_visualization.ipynb            # Results plotting and analysis
-│   ├── cifar_8_2_split_experiment.ipynb      # CIFAR 8-2 class split experiment
-│   └── comprehensive_training_experiment.ipynb # Full training pipeline
-├── configs/                      # Configuration files
-├── experiments/                  # Experiment scripts and results
-├── results/                      # Output results and plots
-├── requirements.txt             # Python dependencies
-└── README.md                   # This file
-```
-
 ## Key Features
 
 ### 1. Modular Architecture
 - **Models**: MobileNetV2-based architecture optimized for on-device training
 - **Data Processing**: Automated CIFAR-10 preprocessing with class splits
 - **Training**: Flexible training pipeline with multiple evaluation strategies
-- **Evaluation**: Comprehensive metrics including confidence analysis
+- **Evaluation**: Comprehensive metrics 
 
 ### 2. Sample Selection Strategies
 - **Best vs Second Best (BvSB)**: Confidence-based sample ranking
@@ -87,36 +49,6 @@ cd on_device_training
 pip install -r requirements.txt
 ```
 
-### Usage
-
-#### Using the Modular Code
-
-```python
-# Import helper functions
-from src.models import OnDeviceTrainingModel
-from src.data import DataPreprocessor
-from src.utils import SampleSelector, run_on_device_training_experiment
-from src.evaluation import plot_training_results
-
-# Load and preprocess data
-preprocessor = DataPreprocessor(img_size=160, batch_size=128)
-datasets = preprocessor.prepare_datasets(n_classes=[0, 1, 2, 3, 4, 5, 6, 7, 8])
-
-# Create model
-model = OnDeviceTrainingModel(num_classes=10, img_size=160)
-
-# Run experiment
-results = run_on_device_training_experiment(
-    model_path="path/to/your/model.keras",
-    ds_train_n=datasets['train_n'],
-    ds_train_m=datasets['train_m'],
-    ds_test_n=datasets['test_n'],
-    ds_test_m=datasets['test_m']
-)
-
-# Visualize results
-plot_training_results(results, save_plots=True)
-```
 
 #### Running Notebooks
 
@@ -172,18 +104,6 @@ If you use this code in your research, please cite:
 }
 ```
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-feature`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
-4. Push to the branch (`git push origin feature/new-feature`)
-5. Create a Pull Request
-
 ## Contact
 
-For questions or collaborations, please open an issue or contact [your-email@domain.com].
+For questions or collaborations, please open an issue or contact [pervoalarakis3@gmail.com].

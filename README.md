@@ -40,8 +40,8 @@ This research investigates on-device training methodologies with focus on:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd on_device_training
+git clone https://github.com/pervolarakis2001/ondevice-training-research.git
+cd ondevice-training-research
 ```
 
 2. Install dependencies:
